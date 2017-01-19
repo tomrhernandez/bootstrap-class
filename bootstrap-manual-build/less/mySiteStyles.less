@@ -1,0 +1,208 @@
+@import "bootstrap.less";
+
+/* override the container*/
+section {
+    .container;
+}
+
+.newRow {
+    .make-row(@grid-gutter-width);
+}
+
+/* rounded corners */
+@myradius: 20px;
+
+.roundTopCorners{
+	.border-top-radius(@myradius);
+}
+
+.roundLeftCorners{
+	.border-left-radius(@myradius);
+}
+
+.roundRightCorners{
+	.border-right-radius(@myradius);
+}
+
+.roundBottomCorners{
+	.border-bottom-radius(@myradius);
+}
+
+.roundAllCorners{
+	.border-top-radius(@myradius);
+	.border-bottom-radius(@myradius);
+}
+
+
+@topPadding: 15px;
+@bottomPadding: 15px;
+@backgroundColor: rgba(86,61,124,.15);  
+@border: 1px solid rgba(86,61,124,.2);
+
+@backgroundColor2: #592ae7;
+@border2: 1px solid #3708c5;
+@colorWhite: #fff;
+
+/** fix the semantic row/column generation */
+article {
+    .newRow;
+}
+
+article div.item3 {
+    .make-md-column(3, @grid-gutter-width);
+}
+
+article div.item4 {
+    .make-md-column(4, @grid-gutter-width);    
+}
+article div.item6 {
+   .make-md-column(6, @grid-gutter-width);
+}
+article div.item8 {
+   .make-md-column(8, @grid-gutter-width);    
+}
+
+aside {
+    .newRow;
+}
+
+aside div.span6 {
+    .make-md-column(6, @grid-gutter-width);
+}
+
+.standardColumnDetails
+{
+	background-color: @backgroundColor;
+    border: @border;
+    padding-top: @topPadding;
+    padding-bottom: @bottomPadding;
+}
+
+.awesomeColumnDetails
+{
+	background-color: @backgroundColor2;
+    border: @border2;
+    padding-top: @topPadding;
+    padding-bottom: @bottomPadding;
+    color: @colorWhite;
+}
+
+.attnColumnDetails {
+    background-color:black;
+    color:yellow;
+}
+
+.attnColumnDetails p {
+    padding:@myradius @myradius @myradius @myradius;
+}
+
+article div.all12 {
+    .make-lg-column(12, @grid-gutter-width);
+    .make-md-column(12, @grid-gutter-width);
+    .make-sm-column(12, @grid-gutter-width);
+    .make-xs-column(12, @grid-gutter-width);
+}
+
+/* Animations */
+.animationDetails {
+    background-color:#94c2c7;
+    border:1px solid #94c2c7;
+    height:500px;
+}
+
+/** standard CSS3 animations work ***/
+.myMover {
+    width:100px;
+    height:100px;
+    background:red;
+    position:relative;
+    -webkit-animation:myMover 5s linear 2s 5 alternate; /* Chrome, Safari, Opera */
+    animation:myMover 5s linear 2s 5 alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myMover
+{
+    0%   {background:red; left:0px; top:0px;}
+    25%  {background:yellow; left:200px; top:0px;}
+    50%  {background:blue; left:200px; top:200px;}
+    75%  {background:green; left:0px; top:200px;}
+    100% {background:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes myMover
+{
+    0%   {background:red; left:0px; top:0px;}
+    25%  {background:yellow; left:200px; top:0px;}
+    50%  {background:blue; left:200px; top:200px;}
+    75%  {background:green; left:0px; top:200px;}
+    100% {background:red; left:0px; top:0px;}
+}
+
+
+@keyframes moveit {
+    0%   {background:red; left:40%; top:200px;}
+    25%  {background:yellow; left:80%; top:200px;}
+    50%  {background:blue; left:80%; top:400px;}
+    75%  {background:green; left:40%; top:400px;}
+    100% {background:red; left:40%; top:200px;}
+}
+
+@-webkit-keyframes moveit
+{
+    0%   {background:red; left:40%; top:200px;}
+    25%  {background:yellow; left:80%; top:200px;}
+    50%  {background:blue; left:80%; top:400px;}
+    75%  {background:green; left:40%; top:400px;}
+    100% {background:red; left:40%; top:200px;}
+}
+
+@animationDetails: moveit 5s linear 2s 5 alternate;
+//@animationDetails: moveit 5s linear 2s infinite alternate;
+
+.myAnimationMoveIt {
+    width:100px;
+    height:100px;
+    background:red;
+    position:relative;
+    .animation(@animationDetails);
+}
+    
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myRotator
+{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg); }
+}
+
+/* Standard syntax */
+@keyframes myRotator
+{
+    from {-moz-transform: rotate(0deg)}
+    to {-moz-transform: rotate(360deg)}
+}
+
+/* ms rotator */
+@-ms-keyframes myRotator {
+    from {-ms-transform: rotate(0deg)}
+    to {-ms-transform: rotate(360deg)}
+}
+
+@animationRotatorDetails: myRotator 3s linear 0s infinite;
+.rotator{
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+
+    background-image:url('../images/2.png');
+    height:150px;
+    width:150px;
+    .roundAllCorners;
+}
+
+.rotator:hover {
+    .animation(@animationRotatorDetails);
+}

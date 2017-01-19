@@ -1,0 +1,92 @@
+﻿body{
+	
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11pt;
+	
+}
+
+.banner
+{
+	background-color:#0972a5;
+	min-height:120px;
+	padding:5px 10px 10px 10px;
+	color:white;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin:0px 0px 2px 0px;
+}
+
+.containermain
+{
+	padding:2px 2px 2px 2px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color:#999999;
+}
+
+.colheader
+{
+	font-weight:bold;
+	font-size:14pt;
+	padding:5px 0px 5px 0px;
+}
+
+.prodtab
+{
+	border:1px black solid;
+	padding:10px 5px 10px 5px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#ababab;
+}
+
+.prodtabheader
+{
+	font-size:12pt;
+	font-weight:bolder;
+}
+
+.prodtabdetails
+{
+	font-size:12pt;
+}
+
+.eetab
+{
+	padding:2px 10px 2px 10px;
+	border:1px #345678 solid;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color:#bcbcbc;
+	margin-right:5px;
+}
+
+.ebaystore
+{
+	max-width:100%;
+	border:1px #c6c6c6 solid;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color:#ababab;
+	padding:2px 2px 2px 2px;
+}
+
+.ebaystoreheader
+{
+	font-weight:bold;
+}
+
+.facebook
+{
+	min-height:500px;
+	max-width:100%;
+	border:1px #c6c6c6 solid;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#ababab;
+}
+
+.facebookheader
+{
+	font-weight:bold;
+}
